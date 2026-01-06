@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddhe83kkhyf83"]
+
+[ext_resource type="PackedScene" uid="uid://dsrv6udry5va1" path="res://Floor.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cptacddf1jupg" path="res://block.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cf5cmn2hh1t2i" path="res://player_2.tscn" id="3_h2yge"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+
+[sub_resource type="Environment" id="Environment_lquwl"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lquwl")
+
+[node name="Floor" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.6508934, 0.75916916, 0, -0.75916916, -0.6508934, 0, 6.1082106, -1.5313449)
+shadow_enabled = true
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block1" parent="Blocks" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 2, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 3.7429526, 0)
+
+[node name="Player2" parent="." instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1512729, 3.6868865)
