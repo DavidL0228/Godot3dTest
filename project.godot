@@ -12,7 +12,7 @@ config_version=5
 
 config/name="3dTest"
 run/main_scene="uid://ddhe83kkhyf83"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
@@ -59,3 +59,7 @@ sprint={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true
