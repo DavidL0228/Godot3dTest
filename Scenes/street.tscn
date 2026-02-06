@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dcb56l71or7mn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6skw"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f3h7"]
+albedo_color = Color(0.59313357, 0.5931336, 0.5931334, 1)
+
+[node name="Street" type="Node3D" unique_id=1995170876]
+
+[node name="Street" type="CSGBox3D" parent="." unique_id=458441552]
+material_override = SubResource("StandardMaterial3D_t6skw")
+use_collision = true
+size = Vector3(12, 0.001, 100)
+
+[node name="Sidewalk1" type="CSGBox3D" parent="." unique_id=1126865209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+use_collision = true
+size = Vector3(2, 1, 100)
+material = SubResource("StandardMaterial3D_4f3h7")
+
+[node name="Sidewalk2" type="CSGBox3D" parent="." unique_id=196364809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+use_collision = true
+size = Vector3(2, 1, 100)
+material = SubResource("StandardMaterial3D_4f3h7")

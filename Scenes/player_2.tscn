@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cf5cmn2hh1t2i"]
 
-[ext_resource type="Script" uid="uid://ccpem5obkcypq" path="res://player_2.gd" id="1_wkcja"]
+[ext_resource type="Script" uid="uid://ccpem5obkcypq" path="res://Scripts/player_2.gd" id="1_wkcja"]
+[ext_resource type="PackedScene" uid="uid://cjcba8egy0448" path="res://Scenes/player_fog.tscn" id="2_cgts5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -14,3 +15,5 @@ shape = SubResource("CapsuleShape3D_sh265")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54302645, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1465743127]
+
+[node name="FogVolume" parent="." unique_id=1784198018 instance=ExtResource("2_cgts5")]

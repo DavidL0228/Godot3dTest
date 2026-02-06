@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ddhe83kkhyf83"]
+
+[ext_resource type="PackedScene" uid="uid://cf5cmn2hh1t2i" path="res://Scenes/player_2.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://4swpakmsjvwl" path="res://Scenes/Floor2.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dcb56l71or7mn" path="res://Scenes/street.tscn" id="3_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cl4jiyqhq4hty" path="res://building.tscn" id="4_jjvhh"]
+[ext_resource type="Shader" uid="uid://bxu1jsya13fc5" path="res://shaders/ps1_post_process.gdshader" id="5_kry3j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+
+[sub_resource type="Environment" id="Environment_lquwl"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21xkr"]
+shader = ExtResource("5_kry3j")
+shader_parameter/viewport_size = Vector2(640, 480)
+shader_parameter/virtual_resoulution = Vector2(320, 240)
+
+[node name="Main" type="Node" unique_id=1796932139]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1059948138]
+environment = SubResource("Environment_lquwl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=67973865]
+transform = Transform3D(1, 0, 0, 0, -0.6508934, 0.75916916, 0, -0.75916916, -0.6508934, 0, 29.832912, -1.5313449)
+shadow_enabled = true
+
+[node name="Player2" parent="." unique_id=649565537 instance=ExtResource("1_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1512729, 3.6868865)
+
+[node name="Floor2" parent="." unique_id=1386079128 instance=ExtResource("2_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 0, 100)
+
+[node name="Street" parent="." unique_id=1995170876 instance=ExtResource("3_kry3j")]
+
+[node name="Buidlings" type="Node3D" parent="." unique_id=1985502263]
+
+[node name="Building8" parent="Buidlings" unique_id=1560853907 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 26.192, -33.36)
+size = Vector3(20, 52.38437, 20)
+
+[node name="Building2" parent="Buidlings" unique_id=778063789 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 13.723, 37.426)
+size = Vector3(20, 29.40039, 20)
+
+[node name="Building" parent="Buidlings" unique_id=1036136601 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 20, 13.15)
+
+[node name="Building3" parent="Buidlings" unique_id=203160987 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 14.7, 37.426)
+size = Vector3(20, 29.40039, 20)
+
+[node name="Building4" parent="Buidlings" unique_id=647489212 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 24.148, 11.919)
+size = Vector3(20, 48.296875, 20)
+
+[node name="Building5" parent="Buidlings" unique_id=943882173 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 22.25, -10.652)
+size = Vector3(20, 44.49951, 20)
+
+[node name="Building6" parent="Buidlings" unique_id=19380672 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 15.763, -9.834)
+size = Vector3(20, 31.525024, 20)
+
+[node name="Building7" parent="Buidlings" unique_id=1403448302 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 9.036, -33.36)
+size = Vector3(20, 18.071228, 20)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=137683062]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=19216812]
+material = SubResource("ShaderMaterial_21xkr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

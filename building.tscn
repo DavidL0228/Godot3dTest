@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cl4jiyqhq4hty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqn35"]
+albedo_color = Color(0.35531357, 0.35531357, 0.35531345, 1)
+
+[node name="Building" type="CSGBox3D" unique_id=1036136601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+material_override = SubResource("StandardMaterial3D_rqn35")
+use_collision = true
+size = Vector3(20, 40, 20)

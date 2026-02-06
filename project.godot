@@ -15,6 +15,14 @@ run/main_scene="uid://ddhe83kkhyf83"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
 [dotnet]
 
 project/assembly_name="3dTest"
@@ -62,4 +70,6 @@ sprint={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+shading/overrides/force_vertex_shading=true
 occlusion_culling/use_occlusion_culling=true

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjcba8egy0448"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_kry3j"]
+density = -6.5385
+
+[node name="FogVolume" type="FogVolume" unique_id=1784198018]
+size = Vector3(14.176697, 8.292114, 18.855255)
+shape = 0
+material = SubResource("FogMaterial_kry3j")
